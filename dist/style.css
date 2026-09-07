@@ -11,3 +11,5 @@
 #cities .section-label{padding-top:3px}#cities .section-label>span{display:block;line-height:1.5;letter-spacing:.5px;max-width:180px}@media(max-width:700px){#cities .section-label>span{max-width:none}.nav nav a:last-child{max-width:none;line-height:inherit}}
 
 .story-blue{color:var(--blue)}.featured-piece{display:block;margin-top:22px;padding:17px 19px;background:#111827;border-radius:4px}.featured-piece .eyebrow{margin-bottom:8px}.featured-piece h3{font:500 18px/1.4 var(--display);color:var(--blue)}.writing-grid .featured-piece p{font-size:14px;margin-top:8px}
+
+footer{flex-wrap:wrap}footer .agent-note{flex:0 0 100%;font-size:12px;line-height:1.7;color:var(--muted);text-align:left}
