@@ -19,6 +19,24 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v6
+      - name: Version static asset URLs
+        env:
+          SITE_VERSION: ${{ github.sha }}
+        run: |
+          python3 - <<'PY'
+          import os
+          from pathlib import Path
+
+          page = Path("dist/index.html")
+          html = page.read_text()
+          version = os.environ["SITE_VERSION"]
+          for asset in ("style.css", "icon.svg"):
+              original = f'href="{asset}"'
+              if original not in html:
+                  raise SystemExit(f"Missing asset reference: {asset}")
+              html = html.replace(original, f'href="{asset}?v={version}"')
+          page.write_text(html)
+          PY
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
         with:
