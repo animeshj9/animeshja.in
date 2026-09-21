@@ -27,3 +27,6 @@ footer{flex-wrap:wrap}footer .agent-note{flex:0 0 100%;font-size:10px;line-heigh
 
 /* Coffee CTA spacing cleanup */
 .coffee-copy{gap:12px}.coffee-link button::before,.coffee-link button::after{content:none!important}.coffee-link button{list-style:none}.coffee-link button::marker{content:""}
+
+/* Keep the coffee CTA softly pill-shaped */
+.intro-note .coffee-link>button{border-radius:999px}
